@@ -1,0 +1,15 @@
+Tareas FortyServApp:
+.
+- Arte 2D.
+- Menu.
+- Libro.
+- Hoja.
+- Adivina.
+- Tirada.
+- Ritual.
+- Juegos.
+- Zener.
+- Memoria.
+- Chequeo.
+- Manual PDF.
+.
