@@ -1,5 +1,11 @@
 extends Node2D
 
+const elemento = [
+	3, 2, 2, 2, 4, 0, 4, 1, 1, 2, 0, 0, 1, 3, 1,
+	3, 0, 2, 1, 3, 4, 2, 0, 2, 4, 4, 0, 3, 0, 4,
+	3, 1, 3, 0, 2, 4, 1, 4, 1, 3
+]
+
 var tipo = 0
 
 func _ready():
@@ -20,6 +26,7 @@ func Siguiente(derecha):
 
 func Cambio(ind):
 	tipo = ind
+	get_node("Elemento").frame = elemento[tipo]
 	get_node("Elemento/Imagen").frame = tipo
 	get_node("Elemento/Sigil").frame = tipo
 	get_node("Elemento/Titulo").frame = tipo

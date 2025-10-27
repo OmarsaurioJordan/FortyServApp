@@ -1,216 +1,1406 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://c7da0fa4n1twn"]
 
-[ext_resource path="res://objects/Carta.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/Control.gd" type="Script" id=2]
-[ext_resource path="res://sprites/d_title.png" type="Texture" id=3]
-[ext_resource path="res://sprites/omwekialt_simbolo.png" type="Texture" id=4]
-[ext_resource path="res://sprites/d_mouses_strip6.png" type="Texture" id=5]
-[ext_resource path="res://sprites/d_fortyradas_strip17.png" type="Texture" id=6]
-[ext_resource path="res://sprites/d_fortybutins_strip8.png" type="Texture" id=7]
+[ext_resource type="PackedScene" uid="uid://dkrisdgwp1xwo" path="res://objects/Carta.tscn" id="1"]
+[ext_resource type="Script" uid="uid://phxw7c0jyxa1" path="res://scripts/Control.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bi2ahc7m0o6sj" path="res://sprites/d_title.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bstykaf58v34s" path="res://sprites/omwekialt_simbolo.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c2dsiu1jy1s3l" path="res://sprites/d_mouses_strip6.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bfoxwy3pxoufc" path="res://sprites/d_fortyradas_strip17.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b16ku2vf2v05i" path="res://sprites/d_fortybutins_strip8.png" id="7"]
 
 [node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="."]
-modulate = Color( 1, 0, 0, 0.501961 )
-self_modulate = Color( 1, 1, 1, 0.501961 )
-margin_right = 4000.0
-margin_bottom = 720.0
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+modulate = Color(1, 0, 0, 0.501961)
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 0
+offset_right = 4000.0
+offset_bottom = 720.0
+metadata/_edit_lock_ = true
 
 [node name="Borde" type="Node2D" parent="Panel"]
-position = Vector2( 2024, 704 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2(2024, 704)
+metadata/_edit_lock_ = true
 
 [node name="Bot" type="Node2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotCreate" type="Sprite" parent="Bot"]
-position = Vector2( 1304, 498 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotCreate" type="Sprite2D" parent="Bot"]
+position = Vector2(1304, 498)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
 frame = 3
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotDelete" type="Sprite" parent="Bot"]
-position = Vector2( 1582, 492 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotDelete" type="Sprite2D" parent="Bot"]
+position = Vector2(1582, 492)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
 frame = 4
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotMove" type="Sprite" parent="Bot"]
-position = Vector2( 1890, 493 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotMove" type="Sprite2D" parent="Bot"]
+position = Vector2(1890, 493)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
 frame = 5
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotVer" type="Sprite" parent="Bot"]
-position = Vector2( 2190, 497 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotVer" type="Sprite2D" parent="Bot"]
+position = Vector2(2190, 497)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
 frame = 6
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotInfo" type="Sprite" parent="Bot"]
-position = Vector2( 2492, 497 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotInfo" type="Sprite2D" parent="Bot"]
+position = Vector2(2492, 497)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
 frame = 7
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotCardL" type="Sprite" parent="Bot"]
-position = Vector2( 1877, 176 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotCardL" type="Sprite2D" parent="Bot"]
+position = Vector2(1877, 176)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotCardR" type="Sprite" parent="Bot"]
-position = Vector2( 2482, 175 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotCardR" type="Sprite2D" parent="Bot"]
+position = Vector2(2482, 175)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
 frame = 2
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotAzar" type="Sprite" parent="Bot"]
-position = Vector2( 2182, 175 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotAzar" type="Sprite2D" parent="Bot"]
+position = Vector2(2182, 175)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
 frame = 1
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotLienzoL" type="Sprite" parent="Bot"]
-position = Vector2( 1282, 175 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotLienzoL" type="Sprite2D" parent="Bot"]
+position = Vector2(1282, 175)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="BotLienzoR" type="Sprite" parent="Bot"]
-position = Vector2( 1577, 169 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+[node name="BotLienzoR" type="Sprite2D" parent="Bot"]
+position = Vector2(1577, 169)
+scale = Vector2(3, 3)
+texture = ExtResource("7")
 hframes = 8
 frame = 2
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="Titulo" type="Sprite" parent="Bot"]
-position = Vector2( 545, 182 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Titulo" type="Sprite2D" parent="Bot"]
+position = Vector2(545, 182)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3")
+metadata/_edit_lock_ = true
 
-[node name="Omwekiatl" type="Sprite" parent="Bot"]
-position = Vector2( 228, 513 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Omwekiatl" type="Sprite2D" parent="Bot"]
+position = Vector2(228, 513)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4")
+metadata/_edit_lock_ = true
 
-[node name="Carta" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2958, 288 )
+[node name="Title" type="Label" parent="Bot/Omwekiatl"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -82.0
+offset_top = 99.3334
+offset_right = 2.0
+offset_bottom = 122.333
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Omwekiatl"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Carta" parent="." instance=ExtResource("1")]
+position = Vector2(2958, 288)
 
 [node name="Info" type="RichTextLabel" parent="."]
-margin_left = 3173.0
-margin_top = 44.0
-margin_right = 3372.0
-margin_bottom = 204.0
-rect_scale = Vector2( 4, 4 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Los 40 servidores son un grimorio de espíritus en baraja de cartas, para adivinación y magiak, creados por Tommie Kelly. La aplicación explica brevemente cualidades o significados de cada entidad. Pulse las 3 cartas superiores para hacer tiradas y practicar su lectura."
+layout_mode = 0
+offset_left = 3173.0
+offset_top = 44.0
+offset_right = 3372.0
+offset_bottom = 204.0
+scale = Vector2(4, 4)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Los 40 servidores son un grimorio de espíritus en baraja de cartas, para adivinación y magiak, creados por Tommie Kelly. La aplicación explica brevemente cualidades o significados de cada entidad."
 scroll_active = false
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+metadata/_edit_lock_ = true
 
 [node name="Numero" type="Label" parent="."]
-margin_left = 2855.0
-margin_top = 548.0
-margin_right = 2890.0
-margin_bottom = 573.0
-rect_scale = Vector2( 6, 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+layout_mode = 0
+offset_left = 2855.0
+offset_top = 548.0
+offset_right = 2890.0
+offset_bottom = 573.0
+scale = Vector2(6, 6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_lock_": true
-}
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
 
-[node name="Lienzo" type="Sprite" parent="."]
-position = Vector2( 2020, 1728 )
-scale = Vector2( 7.5, 7.5 )
-texture = ExtResource( 6 )
+[node name="Lienzo" type="Sprite2D" parent="."]
+position = Vector2(2020, 1728)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("6")
 hframes = 17
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="Orden" type="Sprite" parent="Lienzo"]
-modulate = Color( 1, 1, 1, 0.196078 )
-texture = ExtResource( 6 )
+[node name="Orden" type="Sprite2D" parent="Lienzo"]
+modulate = Color(1, 1, 1, 0.196078)
+texture = ExtResource("6")
 hframes = 17
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true
 
-[node name="Tirada" type="YSort" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Textos" type="Node2D" parent="Lienzo"]
+metadata/_edit_lock_ = true
 
-[node name="Mouse" type="Sprite" parent="."]
-position = Vector2( 2054, 1772 )
-scale = Vector2( 3, 2.8 )
-texture = ExtResource( 5 )
+[node name="F0" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="F1" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F1"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -36.9333
+offset_top = 23.3333
+offset_right = 33.0667
+offset_bottom = 37.3333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "consejo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F2" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F2"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -70.4
+offset_top = 19.8667
+offset_right = -0.399994
+offset_bottom = 33.8667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "favor"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F2"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -10.5333
+offset_top = 22.0
+offset_right = 59.4667
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "contra"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F3" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F3"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -37.3333
+offset_top = -12.6667
+offset_right = 32.6667
+offset_bottom = 1.33334
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "creencia"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F3"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -38.1333
+offset_top = 49.6
+offset_right = 31.8667
+offset_bottom = 63.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "realidad"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F4" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F4"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -39.8667
+offset_top = 24.5333
+offset_right = 30.1333
+offset_bottom = 38.5333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "presente"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F4"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -98.0
+offset_top = 27.4667
+offset_right = -28.0
+offset_bottom = 41.4667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "pasado"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F4"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 22.5333
+offset_top = 26.5333
+offset_right = 92.5333
+offset_bottom = 40.5333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "futuro"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F5" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F5"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -37.3333
+offset_top = 19.0667
+offset_right = 32.6667
+offset_bottom = 33.0667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "dinero"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F5"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -34.8
+offset_top = 86.4
+offset_right = 35.2
+offset_bottom = 100.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "salud"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F5"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -38.9333
+offset_top = -43.3333
+offset_right = 31.0667
+offset_bottom = -29.3333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "amor"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F6" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F6"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -69.0667
+offset_top = -10.2667
+offset_right = 0.933334
+offset_bottom = 3.73334
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "fortalezas"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F6"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -64.0
+offset_top = 51.6
+offset_right = 6.0
+offset_bottom = 65.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "oportunidades"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F6"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -5.46666
+offset_top = -8.66666
+offset_right = 64.5333
+offset_bottom = 5.33334
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "debilidades"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F6"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -6.26666
+offset_top = 52.0
+offset_right = 63.7333
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "amenazas"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F7" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F7"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -82.9333
+offset_top = 82.2667
+offset_right = -12.9333
+offset_bottom = 96.2667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "pasado"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F7"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -23.4667
+offset_top = 82.2667
+offset_right = 46.5333
+offset_bottom = 96.2667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "presente"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F7"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 39.7333
+offset_top = 15.3333
+offset_right = 109.733
+offset_bottom = 29.3333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "consejo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F7"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -113.867
+offset_top = -38.2667
+offset_right = -43.8667
+offset_bottom = -24.2667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "situación"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F7"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 38.0
+offset_top = 82.6667
+offset_right = 108.0
+offset_bottom = 96.6667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "futuro"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F8" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F8"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -73.4667
+offset_top = 67.4667
+offset_right = -3.46666
+offset_bottom = 81.4667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "amor"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F8"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -26.9333
+offset_top = 19.2
+offset_right = 43.0667
+offset_bottom = 33.2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "mente"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F8"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 18.6667
+offset_top = -36.9333
+offset_right = 88.6667
+offset_bottom = -22.9333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "poder"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F8"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 59.2
+offset_top = -75.2
+offset_right = 129.2
+offset_bottom = -61.2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "altruismo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F8"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -130.933
+offset_top = 107.067
+offset_right = -60.9333
+offset_bottom = 121.067
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "dinero"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T6" type="Label" parent="Lienzo/Textos/F8"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -117.067
+offset_top = -71.0667
+offset_right = -47.0667
+offset_bottom = -57.0667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "general"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F9" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F9"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -89.2
+offset_top = -8.4
+offset_right = -19.2
+offset_bottom = 5.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "pasado"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F9"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 32.8
+offset_top = -8.8
+offset_right = 102.8
+offset_bottom = 5.2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "futuro"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F9"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -29.3333
+offset_top = -14.2667
+offset_right = 40.6667
+offset_bottom = -0.266665
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "presente"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F9"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -28.4
+offset_top = -75.0667
+offset_right = 41.6
+offset_bottom = -61.0667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "favor"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F9"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -26.5333
+offset_top = 46.9333
+offset_right = 43.4667
+offset_bottom = 60.9333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "contra"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T6" type="Label" parent="Lienzo/Textos/F9"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -27.8667
+offset_top = 109.6
+offset_right = 42.1333
+offset_bottom = 123.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "consejo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F10" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F10"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -34.4
+offset_top = 23.7333
+offset_right = 35.6
+offset_bottom = 37.7333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "situación"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F10"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -123.2
+offset_top = -6.13333
+offset_right = -53.2
+offset_bottom = 7.86667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "creencia"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F10"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 55.3333
+offset_top = -10.2667
+offset_right = 125.333
+offset_bottom = 3.73334
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "acción"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F10"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 45.7333
+offset_top = 109.467
+offset_right = 115.733
+offset_bottom = 123.467
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "emoción"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F10"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -129.2
+offset_top = 105.333
+offset_right = -59.2
+offset_bottom = 119.333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "resultado"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T6" type="Label" parent="Lienzo/Textos/F10"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -31.6
+offset_top = -69.0667
+offset_right = 38.4
+offset_bottom = -55.0667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "consejo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F11" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F11"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -30.6667
+offset_top = 12.2667
+offset_right = 39.3333
+offset_bottom = 26.2667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "síntesis"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F11"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -121.333
+offset_top = 42.6667
+offset_right = -51.3333
+offset_bottom = 56.6667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "presente"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F11"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 55.8667
+offset_top = 42.6667
+offset_right = 125.867
+offset_bottom = 56.6667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "futuro"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F11"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -29.7333
+offset_top = -74.6667
+offset_right = 40.2667
+offset_bottom = -60.6667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "pasado"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F11"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -28.4
+offset_top = 108.133
+offset_right = 41.6
+offset_bottom = 122.133
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "consejo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T6" type="Label" parent="Lienzo/Textos/F11"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 54.4
+offset_top = -12.0
+offset_right = 124.4
+offset_bottom = 2.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "contra"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T7" type="Label" parent="Lienzo/Textos/F11"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -120.933
+offset_top = -11.6
+offset_right = -50.9333
+offset_bottom = 2.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "favor"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F12" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F12"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -133.333
+offset_top = 106.667
+offset_right = -63.3333
+offset_bottom = 120.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "por qué"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F12"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -116.267
+offset_top = 38.1333
+offset_right = -46.2667
+offset_bottom = 52.1333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "pasado"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F12"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -59.2
+offset_top = 40.4
+offset_right = 10.8
+offset_bottom = 54.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "obstáculos"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F12"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -3.06667
+offset_top = 43.2
+offset_right = 66.9333
+offset_bottom = 57.2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "presente"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F12"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -1.73333
+offset_top = -19.8667
+offset_right = 68.2667
+offset_bottom = -5.86666
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "consejo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T6" type="Label" parent="Lienzo/Textos/F12"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 0.133335
+offset_top = -78.8
+offset_right = 70.1333
+offset_bottom = -64.8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "futuro"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T7" type="Label" parent="Lienzo/Textos/F12"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 53.4667
+offset_top = -77.4667
+offset_right = 123.467
+offset_bottom = -63.4667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "para qué"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F13" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F13"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -119.067
+offset_top = 45.8667
+offset_right = -49.0667
+offset_bottom = 59.8667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "siente"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F13"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -118.667
+offset_top = -14.9333
+offset_right = -48.6667
+offset_bottom = -0.933327
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "siento"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F13"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -60.6667
+offset_top = 45.8667
+offset_right = 9.33334
+offset_bottom = 59.8667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "piensa"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F13"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -59.7333
+offset_top = -19.0667
+offset_right = 10.2667
+offset_bottom = -5.06666
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "pienso"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F13"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 1.06667
+offset_top = 45.8667
+offset_right = 71.0667
+offset_bottom = 59.8667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "quiere"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T7" type="Label" parent="Lienzo/Textos/F13"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 59.0667
+offset_top = 42.6667
+offset_right = 129.067
+offset_bottom = 56.6667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "resultado"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T8" type="Label" parent="Lienzo/Textos/F13"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 60.4
+offset_top = -16.2667
+offset_right = 130.4
+offset_bottom = -2.26666
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "consejo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T6" type="Label" parent="Lienzo/Textos/F13"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 1.46667
+offset_top = -17.2
+offset_right = 71.4667
+offset_bottom = -3.19999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "quiero"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F14" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F14"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -32.9333
+offset_top = 19.2
+offset_right = 37.0667
+offset_bottom = 33.2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "resultado"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F14"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -119.467
+offset_top = 44.9333
+offset_right = -49.4667
+offset_bottom = 58.9333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "deseos A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F14"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -119.867
+offset_top = -9.86666
+offset_right = -49.8667
+offset_bottom = 4.13334
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "disgusta de B"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F14"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -121.2
+offset_top = -70.6667
+offset_right = -51.2
+offset_bottom = -56.6667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "gusta de B"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F14"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -135.467
+offset_top = 108.4
+offset_right = -65.4667
+offset_bottom = 122.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "es A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T6" type="Label" parent="Lienzo/Textos/F14"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 60.1333
+offset_top = 108.0
+offset_right = 130.133
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "es B"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T7" type="Label" parent="Lienzo/Textos/F14"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 51.3333
+offset_top = 44.5333
+offset_right = 121.333
+offset_bottom = 58.5333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "deseos B"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T8" type="Label" parent="Lienzo/Textos/F14"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 54.1333
+offset_top = -10.6667
+offset_right = 124.133
+offset_bottom = 3.33334
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "disgusta de A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T9" type="Label" parent="Lienzo/Textos/F14"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 56.0
+offset_top = -69.6
+offset_right = 126.0
+offset_bottom = -55.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "gusta de A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F15" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F15"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -122.8
+offset_top = -19.0667
+offset_right = -52.8
+offset_bottom = -5.06666
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "creencia A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F15"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -122.4
+offset_top = 43.6
+offset_right = -52.4
+offset_bottom = 57.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "emoción A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F15"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -132.533
+offset_top = 106.267
+offset_right = -62.5333
+offset_bottom = 120.267
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "pasión A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F15"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 58.9333
+offset_top = 107.6
+offset_right = 128.933
+offset_bottom = 121.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "pasión B"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F15"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 54.8
+offset_top = 45.8667
+offset_right = 124.8
+offset_bottom = 59.8667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "emoción B"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T6" type="Label" parent="Lienzo/Textos/F15"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 58.0
+offset_top = -16.2667
+offset_right = 128.0
+offset_bottom = -2.26667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "creencia B"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T7" type="Label" parent="Lienzo/Textos/F15"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -32.2667
+offset_top = -53.6
+offset_right = 37.7333
+offset_bottom = -39.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "futuro"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T8" type="Label" parent="Lienzo/Textos/F15"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -33.6
+offset_top = 11.7333
+offset_right = 36.4
+offset_bottom = 25.7333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "unión"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T9" type="Label" parent="Lienzo/Textos/F15"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -30.4
+offset_top = 75.2
+offset_right = 39.6
+offset_bottom = 89.2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "problemas"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="F16" type="Node2D" parent="Lienzo/Textos"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="T1" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -70.4
+offset_top = -14.4
+offset_right = -0.399994
+offset_bottom = -0.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "situación"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T2" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -64.4
+offset_top = -77.3333
+offset_right = 5.60001
+offset_bottom = -63.3333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "creencia"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T3" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -65.2
+offset_top = 45.6
+offset_right = 4.8
+offset_bottom = 59.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "obstáculos"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T4" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -59.3333
+offset_top = 110.667
+offset_right = 10.6667
+offset_bottom = 124.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "realidad"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T7" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 51.6
+offset_top = 106.4
+offset_right = 121.6
+offset_bottom = 120.4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "consultante"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T8" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 48.1333
+offset_top = 42.1333
+offset_right = 118.133
+offset_bottom = 56.1333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "entorno"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T9" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 51.2
+offset_top = -20.1333
+offset_right = 121.2
+offset_bottom = -6.13333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "emociónes"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T10" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = 50.1333
+offset_top = -81.7333
+offset_right = 120.133
+offset_bottom = -67.7333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "consejo"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T5" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -122.667
+offset_top = -15.2
+offset_right = -52.6667
+offset_bottom = -1.2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "pasado"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="T6" type="Label" parent="Lienzo/Textos/F16"]
+self_modulate = Color(1, 1, 1, 0.470588)
+offset_left = -15.4667
+offset_top = -14.6667
+offset_right = 54.5333
+offset_bottom = -0.666663
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "tendencia"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Tirada" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Mouse" type="Sprite2D" parent="."]
+position = Vector2(2054, 1772)
+scale = Vector2(3, 2.8)
+texture = ExtResource("5")
 hframes = 6
 frame = 5
-__meta__ = {
-"_edit_lock_": true
-}
+metadata/_edit_lock_ = true

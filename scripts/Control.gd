@@ -9,14 +9,17 @@ var radButton = 110 # radio para detectar boton
 var botSobre = null # sobre que boton esta
 
 func _ready():
-	var resDisp = Vector2(ProjectSettings.get_setting("display/window/size/width") * 0.8,
-		ProjectSettings.get_setting("display/window/size/height") * 0.8)
-	OS.set_window_size(resDisp)
-	OS.set_window_position(Vector2(0, 0))
+	randomize()
+	var resDisp = Vector2(ProjectSettings.get_setting("display/window/size/viewport_width") * 0.8,
+		ProjectSettings.get_setting("display/window/size/viewport_height") * 0.8)
+	#get_window().set_size(resDisp)
+	get_window().set_position(Vector2(0, 0))
 	escalaMouse = get_node("Mouse").scale
 	get_node("Lienzo/Orden").visible = false
 	set_process_input(true)
 	set_process(true)
+	cambioLienzo(false, true)
+	$Info.text = Textos(0)
 
 func _process(delta):
 	if cogida != null:
@@ -24,6 +27,7 @@ func _process(delta):
 		pos[0] = clamp(pos[0], 195, 4000 - 195)
 		pos[1] = clamp(pos[1], 720 + 251, 2800 - 251)
 		cogida.position = pos
+		cogida.get_parent().move_child(cogida, -1)
 	MouseGo()
 
 func MouseGo():
@@ -52,7 +56,7 @@ func Crear(pos, forzatipo = -1):
 	if pos[0] > 195 and pos[0] < 4000 - 195:
 		if pos[1] > 720 + 251 and pos[1] < 2800 - 251:
 			if get_node("Tirada").get_children().size() < 40:
-				var aux = node_card.instance()
+				var aux = node_card.instantiate()
 				get_node("Tirada").add_child(aux)
 				aux.position = pos
 				if forzatipo != -1:
@@ -62,13 +66,10 @@ func Crear(pos, forzatipo = -1):
 
 func Tomar(pos):
 	var res = null
-	var depth = 0
 	for c in get_node("Tirada").get_children():
 		if pos[0] > c.position[0] - 195 and pos[0] < c.position[0] + 195:
 			if pos[1] > c.position[1] - 251 and pos[1] < c.position[1] + 251:
-				if c.position[1] > depth:
-					depth = c.position[1]
-					res = c
+				res = c
 	return res
 
 func Rotar(pos):
@@ -135,27 +136,17 @@ func Pulsado(bot_name):
 		get_node("Carta").Ver(true)
 		get_node("Carta").Ruleta()
 	elif bot_name == "BotLienzoL":
-		var li = get_node("Lienzo/Orden")
-		if li.frame == 0:
-			li.frame = 16
-		else:
-			li.frame = li.frame - 1
-		li.visible = li.frame != 0
+		cambioLienzo(true)
 	elif bot_name == "BotLienzoR":
-		var li = get_node("Lienzo/Orden")
-		if li.frame == 16:
-			li.frame = 0
-		else:
-			li.frame = li.frame + 1
-		li.visible = li.frame != 0
+		cambioLienzo(true)
 	elif bot_name == "Titulo":
 		OS.shell_open("https://www.adventuresinwoowoo.com/thefortyservants/")
 	elif bot_name == "Omwekiatl":
-		OS.shell_open("https://linktr.ee/omwekiatl")
+		OS.shell_open("https://omwekiatl.itch.io/")
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				if mouse == 0:
 					Crear(event.position)
@@ -173,11 +164,11 @@ func _input(event):
 			else:
 				if mouse == 2:
 					Suelta()
-		elif event.button_index == BUTTON_WHEEL_DOWN:
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			mouse += 1
 			if mouse > 4:
 				mouse = 0
-		elif event.button_index == BUTTON_WHEEL_UP:
+		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			mouse -= 1
 			if mouse < 0:
 				mouse = 4
@@ -276,3 +267,22 @@ func Textos(ind):
 		return "intuición y adivinación, instinto y confianza, evitar pensar en exceso, fluir por la vida, acceso a información que el consciente no tiene, videnciar el futuro."
 	elif ind == 40:
 		return "nada que perder, sacrificio, reparación, hacer lo que sea necesario a cambio de un costo, transmutación luego de la destrucción."
+
+func cambioLienzo(is_left, force=false):
+	var li = get_node("Lienzo/Orden")
+	if force:
+		li.frame = 0
+	elif is_left:
+		if li.frame == 0:
+			li.frame = 16
+		else:
+			li.frame = li.frame - 1
+	else:
+		if li.frame == 16:
+			li.frame = 0
+		else:
+			li.frame = li.frame + 1
+	li.visible = li.frame != 0
+	for t in get_node("Lienzo/Textos").get_children():
+		t.visible = false
+	get_node("Lienzo/Textos/F" + str(li.frame)).visible = true
